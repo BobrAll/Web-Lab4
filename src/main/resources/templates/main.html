@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab4</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Date & Time</th>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>Hit</th>
+    </tr>
+    <tr th:each="point : ${points}">
+        <td th:text="${point.getDateTime()}" />
+        <td th:text="${point.getX()}" />
+        <td th:text="${point.getY()}" />
+        <td th:text="${point.getR()}" />
+        <td th:text="${point.isHit()}" />
+    </tr>
+</table>
+</body>
+</html>
