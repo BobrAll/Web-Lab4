@@ -1,0 +1,34 @@
+<svg width="700" height="700" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <ellipse fill="#56ff56" cx="350" cy="350" id="svg_15" rx="300" ry="300"/>
+  <rect fill="#ffffff" x="50" y="350" width="300" height="300" id="svg_22"/>
+  <rect fill="#56ff56" x="50" y="50" width="300" height="300" id="svg_23"/>
+  <rect fill="#ffffff" x="351" y="50" width="300" height="300" id="svg_16"/>
+  <rect fill="#56ff56" x="70.7066" y="213.66582" width="581.42759" height="135.75672" id="svg_21" stroke="null" transform="rotate(26.3672 361.42 281.544)"/>
+  <line fill="none" stroke="#000" x1="350" y1="0" x2="350" y2="700" id="svg_3" stroke-linejoin="undefined" stroke-linecap="undefined"/>
+  <line fill="none" stroke="#000" x1="0" y1="350" x2="700" y2="350" id="svg_4" stroke-linejoin="undefined" stroke-linecap="undefined"/>
+  <line fill="none" stroke="#000" x1="350" y1="0" x2="363.28533" y2="13.28533" id="svg_7" stroke-linejoin="undefined" stroke-linecap="undefined"/>
+  <line fill="none" stroke="#000" x1="700" y1="350" x2="686.39853" y2="363.60147" id="svg_8" stroke-linejoin="undefined" stroke-linecap="undefined"/>
+  <line fill="none" stroke="#000" x1="350" y1="0" x2="338.40259" y2="11.59741" id="svg_9" stroke-linejoin="undefined" stroke-linecap="undefined"/>
+  <line fill="none" stroke="#000" x1="700" y1="350" x2="687.65091" y2="337.65091" id="svg_10" stroke-linejoin="undefined" stroke-linecap="undefined"/>
+  <line fill="none" stroke="#000" x1="650" y1="340" x2="650" y2="360" id="svg_11" stroke-linejoin="undefined" stroke-linecap="undefined"/>
+  <line fill="none" stroke="#000" x1="500" y1="340" x2="500" y2="360" id="svg_12" stroke-linejoin="undefined" stroke-linecap="undefined"/>
+  <line fill="none" stroke="#000" x1="50" y1="340" x2="50" y2="360" id="svg_13" stroke-linejoin="undefined" stroke-linecap="undefined"/>
+  <line fill="none" stroke="#000" x1="200" y1="340" x2="200" y2="360" id="svg_14" stroke-linejoin="undefined" stroke-linecap="undefined"/>
+  <line fill="none" x1="340" y1="50" x2="360" y2="50" id="svg_17" stroke="#000000"/>
+  <line fill="none" stroke="#000000" x1="340" y1="650" x2="360" y2="650" id="svg_18"/>
+  <line fill="none" stroke="#000000" x1="340" y1="200" x2="360" y2="200" id="svg_19"/>
+  <line fill="none" x1="340" y1="500" x2="360" y2="500" id="svg_20" stroke="#000000"/>
+  <text fill="#000000" x="367" y="57" id="svg_28" stroke-width="0" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve">R</text>
+  <text fill="#000000" x="371" y="657" id="svg_31" stroke-width="0" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve">-R</text>
+  <text fill="#000000" x="36" y="327" id="svg_26" stroke-width="0" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve">-R</text>
+  <text fill="#000000" x="643" y="333" id="svg_24" stroke-width="0" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve">R</text>
+  <text fill="#000000" stroke-width="0" x="371" y="208" id="svg_29" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve">R/2</text>
+  <text fill="#000000" stroke-width="0" x="368" y="508" id="svg_30" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve" stroke="null">-R/2</text>
+  <text fill="#000000" stroke-width="0" x="177" y="332" id="svg_27" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve" stroke="null">-R/2</text>
+  <text fill="#000000" stroke-width="0" x="485" y="331" id="svg_25" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve">R/2</text>
+  <rect stroke-width="4" id="svg_1" height="700" width="700" y="0" x="0" stroke="#000" fill="none"/>
+ </g>
+
+</svg>

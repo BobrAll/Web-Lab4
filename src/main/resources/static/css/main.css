@@ -1,0 +1,21 @@
+#graph-canvas {
+    margin-left: -700px;
+}
+#y {
+    width: 30px;
+}
+table {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+ }
+th {
+    padding: 10px 20px;
+    border: 2px solid;
+}
+td {
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    border: 2px solid;
+}
+

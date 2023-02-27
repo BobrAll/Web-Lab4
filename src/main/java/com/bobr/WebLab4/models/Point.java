@@ -9,9 +9,9 @@ public class Point {
     private String dateTime;
 
     public Point(double x, double y, double r, boolean isHit, String dateTime) {
-        this.x = x;
-        this.y = y;
-        this.r = r;
+        setX(x);
+        setY(y);
+        setR(r);
         this.isHit = isHit;
         this.dateTime = dateTime;
     }
@@ -21,7 +21,7 @@ public class Point {
     }
 
     public void setX(double x) {
-        this.x = x;
+        this.x = round(x, 1);
     }
 
     public double getY() {
@@ -29,7 +29,7 @@ public class Point {
     }
 
     public void setY(double y) {
-        this.y = y;
+        this.y = round(y, 1);
     }
 
     public double getR() {
@@ -37,7 +37,7 @@ public class Point {
     }
 
     public void setR(double r) {
-        this.r = r;
+        this.r = round(r, 1);
     }
 
     public boolean isHit() {
@@ -54,5 +54,9 @@ public class Point {
 
     public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
+    }
+
+    private double round(double num, int digits) {
+        return (int)(num * digits * 10) / (10.0 * digits);
     }
 }
