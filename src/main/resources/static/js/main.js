@@ -1,11 +1,10 @@
 let canvas = document.getElementById("graph-canvas");
-let context = canvas.getContext("2d");
 
 function sendRequest(event) {
     let rect = canvas.getBoundingClientRect();
     let r = $("#r").val();
     let rPixels = rect.width / 7 * 3;
-    let x = ((event.clientX - rect.left - rect.width / 2) / rPixels);//.toFixed(1)
+    let x = ((event.clientX - rect.left - rect.width / 2) / rPixels);
     let y = (-(event.clientY - rect.top - rect.height / 2) / rPixels);
 
     $.ajax({
