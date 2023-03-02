@@ -29,7 +29,7 @@ public class MainController {
                            @RequestParam(name = "y", required = false) Double y,
                            @RequestParam(name = "r", required = false) Double r,
                            Model model) {
-        if (x != null && y != null && r != null)
+        if (hitHandler.isValidCoordinates(x, y, r))
         {
             String dateTime = LocalDateTime.now().format(formatter);
             pointsRepo.save(new Point(x, y, r, hitHandler.isHit(x, y, r), dateTime));
