@@ -1,6 +1,15 @@
 package com.bobr.WebLab4.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Point {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private double x;
     private double y;
     private double r;
@@ -8,6 +17,9 @@ public class Point {
     private boolean isHit;
     private String dateTime;
 
+    public Point() {
+
+    }
     public Point(double x, double y, double r, boolean isHit, String dateTime) {
         setX(x);
         setY(y);
