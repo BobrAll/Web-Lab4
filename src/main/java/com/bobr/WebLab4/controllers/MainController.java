@@ -1,8 +1,8 @@
 package com.bobr.WebLab4.controllers;
 
 import com.bobr.WebLab4.beans.HitHandler;
-import com.bobr.WebLab4.models.Point;
-import com.bobr.WebLab4.repos.PointsRepo;
+import com.bobr.WebLab4.models.Hit;
+import com.bobr.WebLab4.repos.HitsRepo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,13 +15,13 @@ import java.time.format.DateTimeFormatter;
 @Controller
 @RequestMapping("/main")
 public class MainController {
-    private final PointsRepo pointsRepo;
+    private final HitsRepo hitsRepo;
     private final HitHandler hitHandler;
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    public MainController(HitHandler hitHandler, PointsRepo pointsRepo) {
+    public MainController(HitHandler hitHandler, HitsRepo hitsRepo) {
         this.hitHandler = hitHandler;
-        this.pointsRepo = pointsRepo;
+        this.hitsRepo = hitsRepo;
     }
 
     @GetMapping("")
@@ -32,16 +32,16 @@ public class MainController {
         if (hitHandler.isValidCoordinates(x, y, r))
         {
             String dateTime = LocalDateTime.now().format(formatter);
-            pointsRepo.save(new Point(x, y, r, hitHandler.isHit(x, y, r), dateTime));
+            hitsRepo.save(new Hit(x, y, r, hitHandler.isHit(x, y, r), dateTime));
         }
 
-        model.addAttribute("points", pointsRepo.findAll());
+        model.addAttribute("hits", hitsRepo.findAll());
         return "/main.html";
     }
 
     @GetMapping("/clear")
-    public String deletePoints() {
-        pointsRepo.deleteAll();
+    public String deleteHits() {
+        hitsRepo.deleteAll();
         return "/main.html";
     }
 }

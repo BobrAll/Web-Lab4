@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Point {
+public class Hit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -17,10 +17,10 @@ public class Point {
     private boolean isHit;
     private String dateTime;
 
-    public Point() {
+    public Hit() {
 
     }
-    public Point(double x, double y, double r, boolean isHit, String dateTime) {
+    public Hit(double x, double y, double r, boolean isHit, String dateTime) {
         setX(x);
         setY(y);
         setR(r);

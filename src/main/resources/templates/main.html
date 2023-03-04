@@ -58,12 +58,12 @@
         <th>R</th>
         <th>Hit</th>
     </tr>
-    <tr th:each="point : ${points}">
-        <td th:text="${point.getDateTime()}" />
-        <td th:text="${point.getX()}" />
-        <td th:text="${point.getY()}" />
-        <td th:text="${point.getR()}" />
-        <td th:text="${point.isHit()}" />
+    <tr th:each="hit : ${hits}">
+        <td th:text="${hit.getDateTime()}" />
+        <td th:text="${hit.getX()}" />
+        <td th:text="${hit.getY()}" />
+        <td th:text="${hit.getR()}" />
+        <td th:text="${hit.isHit()}" />
     </tr>
 </table>
 </body>
