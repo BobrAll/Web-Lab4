@@ -24,7 +24,7 @@ public class WebSecurityConfig {
                 )
                 .logout((logout) -> logout.permitAll());
 
-        return http.build();
+        return http.csrf().disable().build();
     }
 
     @Bean
@@ -33,7 +33,7 @@ public class WebSecurityConfig {
                 User.withDefaultPasswordEncoder()
                         .username("user")
                         .password("passwd")
-                        .roles("USER")
+                        .roles("ADMIN")
                         .build();
         return new InMemoryUserDetailsManager(user);
     }

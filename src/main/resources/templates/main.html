@@ -5,9 +5,9 @@
     <title>Lab4</title>
 </head>
 <body>
-<form id="input-form">
+<form id="input-form" action="/hit" method="post">
     <label for="x">X:</label>
-    <select id="x" name="x">
+    <select id="x" ref="x" name="x">
         <option value="-4">-4</option>
         <option value="-3">-3</option>
         <option value="-2">-2</option>
@@ -21,11 +21,11 @@
     <br>
 
     <label for="y">Y:</label>
-    <input type="text" value="1" name="y" id="y">
+    <input type="text" ref="y" value="1" name="y" id="y">
     <br>
 
     <label for="r">R:</label>
-    <select id="r" name="r">
+    <select id="r" ref="r" name="r">
         <option value="-4">-4</option>
         <option value="-3">-3</option>
         <option value="-2">-2</option>
@@ -39,18 +39,18 @@
     <br>
 
     <input type="submit">
-    <input type="reset" id="clear">
+    <input type="reset" id="clear" v-on:click="clear">
 </form>
 
 <br>
 <div>
     <img id="graph-img" src="/images/graph.svg">
-    <canvas id="graph-canvas" height="700" width="700">
+    <canvas id="graph-canvas" height="700" width="700" v-on:click="sendHit" ref="graph">
 
     </canvas>
 </div>
 <br>
-<table>
+<table id="hits-table">
     <tr>
         <th>Date and Time</th>
         <th>X</th>
@@ -58,18 +58,18 @@
         <th>R</th>
         <th>Hit</th>
     </tr>
-    <tr th:each="hit : ${hits}">
-        <td th:text="${hit.getDateTime()}" />
-        <td th:text="${hit.getX()}" />
-        <td th:text="${hit.getY()}" />
-        <td th:text="${hit.getR()}" />
-        <td th:text="${hit.isHit()}" />
+    <tr v-for="hit in hits">
+        <td>{{hit.dateTime}}</td>
+        <td>{{hit.x.toFixed(1)}}</td>
+        <td>{{hit.y.toFixed(1)}}</td>
+        <td>{{hit.r.toFixed(1)}}</td>
+        <td>{{hit.hit}}</td>
     </tr>
 </table>
 </body>
 
-
 <link rel="stylesheet" href="/css/main.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="/js/main.js"></script>
 </html>

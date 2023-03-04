@@ -10,16 +10,15 @@ public class Hit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private double x;
-    private double y;
-    private double r;
+    private Double x;
+    private Double y;
+    private Double r;
 
     private boolean isHit;
     private String dateTime;
 
-    public Hit() {
+    public Hit() {}
 
-    }
     public Hit(double x, double y, double r, boolean isHit, String dateTime) {
         setX(x);
         setY(y);
@@ -28,28 +27,28 @@ public class Hit {
         this.dateTime = dateTime;
     }
 
-    public double getX() {
+    public Double getX() {
         return x;
     }
 
-    public void setX(double x) {
-        this.x = round(x, 1);
+    public void setX(Double x) {
+        this.x = x;
     }
 
-    public double getY() {
+    public Double getY() {
         return y;
     }
 
-    public void setY(double y) {
-        this.y = round(y, 1);
+    public void setY(Double y) {
+        this.y = y;
     }
 
-    public double getR() {
+    public Double getR() {
         return r;
     }
 
-    public void setR(double r) {
-        this.r = round(r, 1);
+    public void setR(Double r) {
+        this.r = r;
     }
 
     public boolean isHit() {
@@ -66,9 +65,5 @@ public class Hit {
 
     public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
-    }
-
-    private double round(double num, int digits) {
-        return (int)(num * digits * 10) / (10.0 * digits);
     }
 }

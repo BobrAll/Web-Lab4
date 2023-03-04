@@ -1,5 +1,6 @@
 package com.bobr.WebLab4.beans;
 
+import com.bobr.WebLab4.models.Hit;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,7 +12,11 @@ public class HitHandler {
     private final static double minR = -4;
     private static final double maxR = 4;
 
-    public boolean isHit(double x, double y, double r) {
+    public boolean isHit(Hit hit) {
+        double x = hit.getX();
+        double y = hit.getY();
+        double r = hit.getR();
+
         if (x < 0 && y > 0)
             return (x >= -r && y <= r);
         else if (x > 0 && y > 0)
@@ -21,10 +26,12 @@ public class HitHandler {
         else
             return false;
     }
-    public boolean isValidCoordinates(Double x, Double y, Double r) {
-        if (x == null || y == null || r == null)
+    public boolean isValidCoordinates(Hit hit) {
+        if (hit.getX() == null || hit.getY() == null || hit.getR() == null)
             return false;
 
-        return (x >= minX && x <= maxX && y >= minY && y <= maxY && r >= minR && r <= maxR);
+        return (hit.getX() >= minX && hit.getX() <= maxX &&
+                hit.getY() >= minY && hit.getY() <= maxY &&
+                hit.getR() >= minR && hit.getR() <= maxR);
     }
 }
