@@ -25,6 +25,6 @@ public class HitHandler {
         if (x == null || y == null || r == null)
             return false;
 
-        return (x > minX && x < maxX && y > minY && y < maxY && r > minR && r < maxR);
+        return (x >= minX && x <= maxX && y >= minY && y <= maxY && r >= minR && r <= maxR);
     }
 }
