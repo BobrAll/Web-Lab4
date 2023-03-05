@@ -14,11 +14,23 @@ var form = new Vue({
             document.getElementById("graph-img").src =
                 (this.$refs.r.value >= 0) ? "/images/graph.svg" : "/images/inverted_graph.svg";
         },
+        ddos() {
+            let r = this.$refs.r.value;
+            for (let i = 0; i < 20; i++) {
+                axios
+                    .post("/hit", {
+                        x: hitHelper.generateRandomCoordinate() * r,
+                        y: hitHelper.generateRandomCoordinate() * r,
+                        r: r
+                    })
+            }
+            table.reloadTable();
+        },
         validate() {
             const minX = -4;
             const maxX = 4;
-            const minY = -4;
-            const maxY = 4;
+            const minY = -5;
+            const maxY = 5;
             const minR = -4;
             const maxR = 4;
 
@@ -137,6 +149,9 @@ var hitHelper = new Vue({
             axios
                 .delete("/hit")
                 .then(table.reloadTable);
+        },
+        generateRandomCoordinate() {
+            return (Math.random() - 0.5) * 2.3;
         }
     }
 })

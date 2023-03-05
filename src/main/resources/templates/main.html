@@ -5,77 +5,77 @@
     <title>Lab4</title>
 </head>
 <body>
-<div>
-    <div class="content">
-        <img id="graph-img" height="500" width="500" src="/images/graph.svg" ref="graphImg">
-        <canvas id="graph-canvas" height="500" width="500" v-on:click="sendHit" ref="graph"/>
-    </div>
-    <div class="content">
-        <form id="input-form" action="/hit" method="post">
-            <div class="form-coordinates">
-                <div>
-                    <label for="x">X:</label>
-                    <select id="x" ref="x" name="x">
-                        <option value="-4">-4</option>
-                        <option value="-3">-3</option>
-                        <option value="-2">-2</option>
-                        <option value="-1">-1</option>
-                        <option value="0">0</option>
-                        <option value="1" selected="selected">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                    <label ref="xError" class="errorMessage" for="x">X должен быть в пределах [-4;4]</label>
-                </div>
+<div class="content">
+    <img id="graph-img" height="500" width="500" src="/images/graph.svg" ref="graphImg">
+    <canvas id="graph-canvas" height="500" width="500" v-on:click="sendHit" ref="graph"/>
+</div>
 
-                <div>
-                    <label for="y">Y:</label>
-                    <input type="text" ref="y" value="1" name="y" id="y">
-                    <label ref="yError" class="errorMessage" for="y">Y должен быть в пределах [-4;4]</label>
-                </div>
-
-                <div>
-                    <label for="r">R:</label>
-                    <select id="r" ref="r" name="r" v-on:change="handleR">
-                        <option value="-4">-4</option>
-                        <option value="-3">-3</option>
-                        <option value="-2">-2</option>
-                        <option value="-1">-1</option>
-                        <option value="0">0</option>
-                        <option value="1" selected="selected">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                    <label ref="rError" class="errorMessage" for="r">R должен быть в пределах [-4;4]</label>
-                </div>
+<div class="content">
+    <form id="input-form" action="/hit" method="post">
+        <div class="form-coordinates">
+            <div>
+                <label for="x">X:</label>
+                <select id="x" ref="x" name="x">
+                    <option value="-4">-4</option>
+                    <option value="-3">-3</option>
+                    <option value="-2">-2</option>
+                    <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1" selected="selected">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <label ref="xError" class="errorMessage" for="x">X должен быть в пределах [-4;4]</label>
             </div>
 
-            <div class="form-buttons">
-                <input type="button" value="отправить" v-on:click="sendHit">
-                <input type="reset" id="clear" v-on:click="clear">
+            <div>
+                <label for="y">Y:</label>
+                <input type="text" ref="y" value="1" name="y" id="y">
+                <label ref="yError" class="errorMessage" for="y">Y должен быть в пределах [-4;4]</label>
             </div>
-        </form>
 
-        <div class="container">
-            <table id="hits-table">
-                <tr>
-                    <th>Date and Time</th>
-                    <th>X</th>
-                    <th>Y</th>
-                    <th>R</th>
-                    <th>Hit</th>
-                </tr>
-                <tr v-for="hit in hits">
-                    <td>{{hit.dateTime}}</td>
-                    <td>{{hit.x.toFixed(1)}}</td>
-                    <td>{{hit.y.toFixed(1)}}</td>
-                    <td>{{hit.r.toFixed(1)}}</td>
-                    <td>{{hit.success}}</td>
-                </tr>
-            </table>
+            <div>
+                <label for="r">R:</label>
+                <select id="r" ref="r" name="r" v-on:change="handleR">
+                    <option value="-4">-4</option>
+                    <option value="-3">-3</option>
+                    <option value="-2">-2</option>
+                    <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1" selected="selected">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <label ref="rError" class="errorMessage" for="r">R должен быть в пределах [-4;4]</label>
+            </div>
         </div>
+
+        <div class="form-buttons">
+            <input type="button" value="отправить" v-on:click="sendHit">
+            <input type="reset" id="clear" v-on:click="clear">
+            <input type="button" value="20 точек" v-on:click="ddos">
+        </div>
+    </form>
+
+    <div class="container">
+        <table id="hits-table">
+            <tr>
+                <th>Date and Time</th>
+                <th>X</th>
+                <th>Y</th>
+                <th>R</th>
+                <th>Hit</th>
+            </tr>
+            <tr v-for="hit in hits">
+                <td>{{hit.dateTime}}</td>
+                <td>{{hit.x.toFixed(1)}}</td>
+                <td>{{hit.y.toFixed(1)}}</td>
+                <td>{{hit.r.toFixed(1)}}</td>
+                <td>{{hit.success}}</td>
+            </tr>
+        </table>
     </div>
 </div>
 </body>

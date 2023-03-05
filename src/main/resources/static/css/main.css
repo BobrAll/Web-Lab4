@@ -2,7 +2,8 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 #graph-canvas {
-    margin-left: -505px;
+    margin-left: -500px;
+    position: absolute;
 }
 #y {
     width: 30px;
@@ -31,11 +32,12 @@ td {
 }
 .content {
     display: inline-block;
+    padding-left: 20px;
 }
 
 .form-coordinates {
     margin-left: 45%;
 }
 .form-buttons {
-    margin-left: 35%;
+    margin-left: 25%;
 }

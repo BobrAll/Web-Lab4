@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 public class HitHandler {
     private final static double minX = -4;
     private static final double maxX = 4;
-    private final static double minY = -4;
-    private static final double maxY = 4;
+    private final static double minY = -5;
+    private static final double maxY = 5;
     private final static double minR = -4;
     private static final double maxR = 4;
 
