@@ -25,7 +25,7 @@
     <br>
 
     <label for="r">R:</label>
-    <select id="r" ref="r" name="r">
+    <select id="r" ref="r" name="r" v-on:change="handleR">
         <option value="-4">-4</option>
         <option value="-3">-3</option>
         <option value="-2">-2</option>
@@ -44,7 +44,7 @@
 
 <br>
 <div>
-    <img id="graph-img" src="/images/graph.svg">
+    <img id="graph-img" src="/images/graph.svg" ref="graphImg">
     <canvas id="graph-canvas" height="700" width="700" v-on:click="sendHit" ref="graph">
 
     </canvas>

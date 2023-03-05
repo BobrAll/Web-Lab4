@@ -15,16 +15,19 @@ public class HitHandler {
     public boolean isHit(Hit hit) {
         double x = hit.getX();
         double y = hit.getY();
-        double r = hit.getR();
+        double r = Math.abs(hit.getR());
+        boolean result;
 
         if (x <= 0 && y >= 0)
-            return (x >= -r && y <= r);
+            result = (x >= -r && y <= r);
         else if (x >= 0 && y >= 0)
-            return y <= r / 2 && y <= r / 2 - x / 2;
+            result = y <= r / 2 && y <= r / 2 - x / 2;
         else if (x >= 0 && y <= 0)
-            return (x * x + y * y <= r * r);
+            result = (x * x + y * y <= r * r);
         else
-            return false;
+            result = false;
+
+        return hit.getR() >= 0? result : !result;
     }
     public boolean isValidCoordinates(Hit hit) {
         if (hit.getX() == null || hit.getY() == null || hit.getR() == null)
