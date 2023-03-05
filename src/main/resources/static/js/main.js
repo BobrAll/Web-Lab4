@@ -6,7 +6,7 @@ var form = new Vue({
         },
         sendHit() {
             if (this.validate()) {
-                hitHelper.sendHit(this.$refs.x.value, this.$refs.y.value, this.$refs.r.value)
+                hitHelper.sendHit(this.$refs.x.value, this.$refs.y.value.replace(",", "."), this.$refs.r.value)
             }
         },
         handleR() {
