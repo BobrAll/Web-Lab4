@@ -1,21 +1,11 @@
 var form = new Vue({
     el: '#input-form',
     methods: {
-        clear: function () {
-            axios
-                .delete("/hit")
-                .then(table.reloadTable)
+        clear() {
+            hitHelper.deleteHits()
         },
-        sendHit: function () {
-            axios
-                .post("/hit", {
-                    x: this.$refs.x.value,
-                    y: this.$refs.y.value,
-                    r: this.$refs.r.value
-                })
-                .then(
-                    table.reloadTable
-                )
+        sendHit() {
+            hitHelper.sendHit(this.$refs.x.value, this.$refs.y.value, this.$refs.r.value)
         }
     }
 })
@@ -34,24 +24,14 @@ var canvas = new Vue({
         this.height = rect.height;
         this.posX = rect.left;
         this.posY = rect.top;
-        this.rPixels = this.width / 7 * 3;
     },
     methods: {
         sendHit: function(event) {
             let r = form.$refs.r.value;
-            let rPixels = this.width / 7 * 3;
-            let x = ((event.clientX - this.posX - this.width / 2) / rPixels);
-            let y = (-(event.clientY - this.posY - this.height / 2) / rPixels);
+            let x = ((event.clientX - this.posX - this.width / 2) * r);
+            let y = (-(event.clientY - this.posY - this.height / 2) * r);
 
-            axios
-                .post("/hit", {
-                    x: x,
-                    y: y,
-                    r: r
-                })
-                .then(
-                    table.reloadTable
-                )
+            hitHelper.sendHit(hitHelper.pixelsToCoordinate(x), hitHelper.pixelsToCoordinate(y), r)
         },
         drawHits: function() {
             let context = this.$refs.graph.getContext("2d");
@@ -62,8 +42,9 @@ var canvas = new Vue({
                 for (let hit of hits) {
                     context.beginPath();
                     context.fillStyle = hit.hit? '#1a2edb' : '#e32636';
-                    context.arc(this.width / 2 + hit.x * this.rPixels,
-                        this.height / 2 - hit.y * this.rPixels,
+
+                    context.arc(this.width / 2 + hit.x * hitHelper.coordinateToPixels(hit.r),
+                        this.height / 2 - hit.y * hitHelper.coordinateToPixels(hit.r),
                         5,
                         0,
                         Math.PI * 2,
@@ -91,6 +72,31 @@ var table = new Vue({
                     this.hits = response.data;
                     canvas.drawHits();
                 })
+        }
+    }
+})
+
+var hitHelper = new Vue({
+    methods: {
+        pixelsToCoordinate(pixels) {
+            return pixels / (canvas.width / 7 * 3);
+        },
+        coordinateToPixels(coordinate) {
+            return (canvas.width / 7 * 3) / coordinate;
+        },
+        sendHit(x, y, r) {
+            axios
+                .post("/hit", {
+                    x: x,
+                    y: y,
+                    r: r
+                })
+                .then(table.reloadTable);
+        },
+        deleteHits() {
+            axios
+                .delete("/hit")
+                .then(table.reloadTable);
         }
     }
 })
