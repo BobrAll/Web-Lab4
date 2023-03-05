@@ -5,6 +5,17 @@ var form = new Vue({
             axios
                 .delete("/hit")
                 .then(table.reloadTable)
+        },
+        sendHit: function () {
+            axios
+                .post("/hit", {
+                    x: this.$refs.x.value,
+                    y: this.$refs.y.value,
+                    r: this.$refs.r.value
+                })
+                .then(
+                    table.reloadTable
+                )
         }
     }
 })

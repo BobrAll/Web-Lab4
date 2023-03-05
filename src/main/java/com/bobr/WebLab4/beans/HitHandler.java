@@ -17,12 +17,12 @@ public class HitHandler {
         double y = hit.getY();
         double r = hit.getR();
 
-        if (x < 0 && y > 0)
+        if (x <= 0 && y >= 0)
             return (x >= -r && y <= r);
-        else if (x > 0 && y > 0)
-            return y < r / 2 && y < r / 2 - x / 2;
-        else if (x > 0 && y < 0)
-            return (x * x + y * y < r * r);
+        else if (x >= 0 && y >= 0)
+            return y <= r / 2 && y <= r / 2 - x / 2;
+        else if (x >= 0 && y <= 0)
+            return (x * x + y * y <= r * r);
         else
             return false;
     }
