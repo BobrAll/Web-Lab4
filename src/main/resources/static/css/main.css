@@ -1,12 +1,13 @@
-
+body {
+    font-family: 'Open Sans', sans-serif;
+}
 #graph-canvas {
-    margin-left: -705px;
+    margin-left: -505px;
 }
 #y {
     width: 30px;
 }
 table {
-    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
  }
 th {
@@ -23,4 +24,18 @@ td {
 .errorMessage {
     display: none;
 }
+.container {
+    height: 400px;
+    display: inline-block;
+    overflow: scroll;
+}
+.content {
+    display: inline-block;
+}
 
+.form-coordinates {
+    margin-left: 45%;
+}
+.form-buttons {
+    margin-left: 35%;
+}
