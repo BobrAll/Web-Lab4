@@ -12,7 +12,7 @@ public class HitHandler {
     private final static double minR = -4;
     private static final double maxR = 4;
 
-    public boolean isHit(Hit hit) {
+    public boolean isSuccess(Hit hit) {
         double x = hit.getX();
         double y = hit.getY();
         double r = Math.abs(hit.getR());

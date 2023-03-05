@@ -14,16 +14,16 @@ public class Hit {
     private Double y;
     private Double r;
 
-    private boolean isHit;
+    private boolean isSuccess;
     private String dateTime;
 
     public Hit() {}
 
-    public Hit(double x, double y, double r, boolean isHit, String dateTime) {
+    public Hit(double x, double y, double r, boolean isSuccess, String dateTime) {
         setX(x);
         setY(y);
         setR(r);
-        this.isHit = isHit;
+        this.isSuccess = isSuccess;
         this.dateTime = dateTime;
     }
 
@@ -51,12 +51,12 @@ public class Hit {
         this.r = r;
     }
 
-    public boolean isHit() {
-        return isHit;
+    public boolean isSuccess() {
+        return isSuccess;
     }
 
-    public void setHit(boolean hit) {
-        isHit = hit;
+    public void setSuccess(boolean success) {
+        isSuccess = success;
     }
 
     public String getDateTime() {

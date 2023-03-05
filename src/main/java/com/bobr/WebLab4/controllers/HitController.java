@@ -30,7 +30,7 @@ public class HitController {
         if (hitHandler.isValidCoordinates(hit))
         {
             hit.setDateTime(LocalDateTime.now().format(formatter));
-            hit.setHit(hitHandler.isHit(hit));
+            hit.setSuccess(hitHandler.isSuccess(hit));
 
             hitsRepo.save(hit);
         }
