@@ -124,6 +124,7 @@ var table = new Vue({
                     this.hits = response.data;
                     canvas.drawHits();
                 })
+
         }
     }
 })
@@ -143,7 +144,12 @@ var hitHelper = new Vue({
                     y: y,
                     r: r
                 })
-                .then(table.reloadTable);
+                .then(response => {
+                    if (response.headers.get("content-type") == "text/html;charset=UTF-8")
+                        document.write(response.data)
+
+                    table.reloadTable();
+                })
         },
         deleteHits() {
             axios
