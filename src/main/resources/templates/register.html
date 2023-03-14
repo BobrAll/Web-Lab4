@@ -1,27 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="ISO-8859-1">
-  <title>Registration</title>
+    <meta charset="UTF-8">
+    <title>Registration</title>
 </head>
 <body>
 <form action="/register" method="post">
-  <div class="container">
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
+    <h3>Регистрация</h3>
 
-    <label for="username">
-      <b>Username</b>
-    </label>
-    <input type="text" placeholder="Enter Username" name="username" id="username" required>
+    <div><label for="username"><b>Username</b></label></div>
+    <div><input type="text" name="username" id="username" required></div>
 
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+    <div><label for="password"><b>Password</b></label></div>
+    <div><input type="password" name="password" id="password" required></div>
 
-    <button type="submit" class="registerbtn">Register</button>
-  </div>
+    <button type="submit" class="registerbtn">Зарегистрироваться</button>
+    <div><a href="/login">Уже есть аккаунт</a></div>
 
 </form>
 </body>
 </html>
+
+<style>
+    h3{
+        margin-top: 0;
+    }
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 22px;
+    }
+    input {
+        margin: 10px;
+        padding: 10px;
+        border:0;
+        border-radius: 10px;
+        box-shadow:0 0 15px 4px rgba(0,0,0,0.2);
+    }
+    form {
+        display: inline-block;
+        padding: 30px;
+        text-align: center;
+        margin-top: 20vh;
+        margin-left: 44vw;
+        border: 6px dashed #3d9470;
+        border-radius: 30px;
+    }
+    button {
+        margin-top: 20px;
+        padding:10px;
+        background-color:#3d9470;
+        color:#fff;
+        font-weight:600;
+        border-radius:5px;
+        border: 2px solid white;
+    }
+    button:hover {
+        border: 2px solid black;
+    }
+    input:focus {
+        border-color: #000;
+    }
+    a {
+        color: black;
+        font-size: 15px;
+    }
+</style>

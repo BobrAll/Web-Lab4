@@ -1,5 +1,8 @@
 body {
+    margin-left: 25vw;
+    margin-top: 20vh;
     font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
 }
 #graph-canvas {
     margin-left: -500px;
@@ -10,34 +13,73 @@ body {
 }
 table {
     font-weight: bold;
- }
+}
 th {
+    position: sticky;
+    top: 0;
+    background: white;
     padding: 10px 20px;
     border: 2px solid;
-    font-size: 18px;
+    font-size: 20px;
 }
 td {
     padding: 10px;
     border: 2px solid;
-    font-size: 14px;
     text-align: center;
 }
 .errorMessage {
     display: none;
 }
 .container {
-    height: 400px;
+    height: 350px;
     display: inline-block;
     overflow: scroll;
 }
 .content {
+    margin: 40px;
     display: inline-block;
-    padding-left: 20px;
+}
+.info {
+    text-align: center;
+    padding: 0px 15px;
+    border: 6px solid #3d9470;
+    border-radius: 30px;
 }
 
 .form-coordinates {
-    margin-left: 45%;
+    margin-top: 30px;
+    margin-bottom: 3%;
 }
-.form-buttons {
-    margin-left: 25%;
+a {
+    position: absolute;
+    right: 1vw;
+    top: 1vh;
+    padding: 10px;
+    background-color: #e32636;
+    color: white;
+    border-radius: 10px;
+}
+
+input[type=button] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #3d9470;
+    color: white;
+    font-weight:600;
+    border-radius:5px;
+}
+#clear {
+    background-color: #e32636;
+}
+@media screen and (max-width: 1024px) {
+    body {
+        margin-left: 10vw;
+    }
+}
+@media screen and (max-width: 650px) {
+    body {
+        margin-top: 30px;
+        margin-left: 0;
+    }
 }
